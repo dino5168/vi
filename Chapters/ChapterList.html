@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      cuốn tiểu thuyết , đọc tiểu thuyết , tiểu thuyết giả tưởng , Danh sách
+      tiểu thuyết
+    </title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      .hidden {
+        display: none;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100">
+    <div class="container mx-auto my-8 p-6 bg-white rounded-lg shadow-lg">
+      <div class="flex items-center justify-between mb-4">
+        <h1 class="text-3xl font-bold">Danh Sách Chương</h1>
+        <button onclick="goBack()" class="p-2 bg-blue-500 text-white rounded">
+          Trở Về Trang Trước
+        </button>
+      </div>
+      <input
+        type="text"
+        id="search"
+        placeholder="Tìm kiếm chương..."
+        class="mb-4 p-2 border rounded w-full"
+        oninput="filterChapters()"
+      />
+
+      <ul id="chapter-list" class="space-y-4">
+        <!-- Chương được lặp lại -->
+        <li
+          class="chapter-item p-4 bg-gray-50 rounded-lg shadow hover:bg-gray-100 transition duration-200"
+        >
+          <a href="../Detail01/ch01.html" class="text-blue-500 hover:underline"
+            >Chương 1: Khởi Đầu Mới</a
+          >
+        </li>
+        <!-- 继续添加更多章节项 -->
+        <!-- 示例 -->
+        <li
+          class="chapter-item p-4 bg-gray-50 rounded-lg shadow hover:bg-gray-100 transition duration-200"
+        >
+          <a href="../Detail01/ch02.html" class="text-blue-500 hover:underline"
+            >Chương 2: Học từ nó, chỉ có được nó</a
+          >
+        </li>
+        <!-- 更多章节... -->
+        <!-- 示例 -->
+        <li
+          class="chapter-item p-4 bg-gray-50 rounded-lg shadow hover:bg-gray-100 transition duration-200"
+        >
+          <a href="../Detail01/ch03.html" class="text-blue-500 hover:underline"
+            >Chương 3: Thợ thủ công và bậc thầy</a
+          >
+        </li>
+        <!-- 示例 -->
+        <li
+          class="chapter-item p-4 bg-gray-50 rounded-lg shadow hover:bg-gray-100 transition duration-200"
+        >
+          <a href="../Detail01/ch04.html" class="text-blue-500 hover:underline"
+            >Chương 4: đây là một điều tốt</a
+          >
+        </li>
+        <!-- 示例 -->
+        <li
+          class="chapter-item p-4 bg-gray-50 rounded-lg shadow hover:bg-gray-100 transition duration-200"
+        >
+          <a href="../Detail01/ch05.html" class="text-blue-500 hover:underline"
+            >Chương 5 : Tổ tiên trở về</a
+          >
+        </li>
+        <!-- 示例 -->
+      </ul>
+
+      <div class="flex justify-between mt-4">
+        <button
+          id="prevBtn"
+          class="p-2 bg-blue-500 text-white rounded"
+          onclick="changePage(-1)"
+        >
+          Trước
+        </button>
+        <button
+          id="nextBtn"
+          class="p-2 bg-blue-500 text-white rounded"
+          onclick="changePage(1)"
+        >
+          Tiếp theo
+        </button>
+      </div>
+    </div>
+
+    <script>
+      let currentPage = 1;
+      const itemsPerPage = 10; // 每页显示的章节数
+      const chapters = [...document.querySelectorAll(".chapter-item")]; // 获取所有章节项
+
+      function displayChapters() {
+        const start = (currentPage - 1) * itemsPerPage;
+        const end = start + itemsPerPage;
+        chapters.forEach((chapter, index) => {
+          chapter.classList.toggle("hidden", index < start || index >= end);
+        });
+        document.getElementById("prevBtn").disabled = currentPage === 1;
+        document.getElementById("nextBtn").disabled = end >= chapters.length;
+      }
+
+      function changePage(direction) {
+        currentPage += direction;
+        displayChapters();
+      }
+
+      function filterChapters() {
+        const query = document.getElementById("search").value.toLowerCase();
+        chapters.forEach((chapter) => {
+          const text = chapter.innerText.toLowerCase();
+          chapter.classList.toggle("hidden", !text.includes(query));
+        });
+      }
+      function goBack() {
+        window.history.back(); // 返回上一頁
+      }
+      displayChapters(); // 初始显示章节
+    </script>
+  </body>
+</html>
