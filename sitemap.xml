@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+   <url>
+      <loc>https://dino5168.github.io/vi/</loc>
+      <lastmod>2024-11-16</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>1.0</priority>
+   </url>
+   <!-- Add more URLs as needed -->
+   <url>
+    <loc>https://dino5168.github.io/vi/Chapters/ChapterList.html</loc>
+    <lastmod>2024-11-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://dino5168.github.io/vi/Detail01/ch01.html</loc>
+    <lastmod>2024-11-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+<url>
+    <loc>https://dino5168.github.io/vi/Detail01/ch02.htmll</loc>
+    <lastmod>2024-11-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+<url>
+    <loc>https://dino5168.github.io/vi/Detail01/ch03.htmll</loc>
+    <lastmod>2024-11-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://dino5168.github.io/vi/Detail01/ch04.htmll</loc>
+    <lastmod>2024-11-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://dino5168.github.io/vi/Detail01/ch05.htmll</loc>
+    <lastmod>2024-11-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+
+</urlset>
